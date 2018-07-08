@@ -1,5 +1,5 @@
 import sys
-from Ticket import Ticket
+from services.Ticket import Ticket
 from colorama import Style, Fore
 from helpers.messages import messages as messages
 
