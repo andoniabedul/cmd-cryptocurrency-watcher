@@ -1,16 +1,7 @@
 import sys
 from services.Ticket import Ticket
-from colorama import Style, Fore
 from helpers.messages import messages as messages
 
-
-def welcome():
-  return """
-    ####################################################
-    ##                 Welcome to,                    ##
-    ##                 CRYPTOWATCHER                  ##    
-    ####################################################
-  """
 
 def get_info():
   commands = sys.argv
@@ -26,16 +17,15 @@ def init():
   print(messages['welcome'])
   pairs = get_info()
   ticket = Ticket(pairs[0], pairs[1])
-  response = ticket.get()
-  
-  if response['success']:
+  responses = Ticket.get(ticket)
+  formated_responses = [ticket for ticket in responses if ticket['success'] is True]
+  ticket_errors = [ticket for ticket in responses if ticket['success'] is False]
+  for response in formated_responses:
     print(
-      messages['out_data'](response, pairs)
-    )
-  else:
-    print(
-      response['data']
-    )
+        messages['responses']['console_multiple_out'](response, pairs)
+      )
+  for ticket_error in ticket_errors:
+    print("* {}: {}".format(ticket_error['exchange'].upper(), ticket_error['error']))
   
   
 

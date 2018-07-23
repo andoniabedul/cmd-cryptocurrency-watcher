@@ -1,0 +1,31 @@
+{
+  "bitfinex": {
+      "type": "object",
+      "properties": {
+        "exchange": {
+          "type": "string"
+        },
+        "average": {
+          "type": "string"
+        },
+        "high": {
+          "type": "string"
+        },
+        "low": {
+          "type": "string"
+        },
+        "ask": {
+          "type": "string"
+        },
+        "bid": {
+          "type": "string"
+        },
+        "last": {
+          "type": "string"
+        },
+        "date": {
+          "type": "string"
+        }
+      }
+    }
+}

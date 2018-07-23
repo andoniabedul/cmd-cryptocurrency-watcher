@@ -1,5 +1,8 @@
 {
   "tickets": {
-    "bitfinex": "https://api.bitfinex.com/v1/pubticker/{}"
+    "bitfinex": "https://api.bitfinex.com/v1/pubticker/{}",
+    "poloniex": "https://poloniex.com/public?command=returnTicker",
+    "gemini": "https://api.gemini.com/v1/pubticker/{}",
+    "coinbase": "https://api.pro.coinbase.com/products/{}/ticker"
   }
 }
